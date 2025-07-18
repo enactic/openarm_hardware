@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discord
+    url: https://discord.gg/FsZaZ4z3We
+    about: Please ask and answer questions here.
+  - name: GitHub Discussions
+    url: https://github.com/enactic/openarm_hardware/discussions
+    about: If you prefer GitHub Discussions to Discord, you can use GitHub Discussions too.

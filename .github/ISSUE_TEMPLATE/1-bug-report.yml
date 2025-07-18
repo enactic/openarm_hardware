@@ -1,0 +1,11 @@
+name: Bug Report
+description: File a bug report.
+type: Bug
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the problem you got
+      description: It's better that you provide information as much as possible.
+    validations:
+      required: true
