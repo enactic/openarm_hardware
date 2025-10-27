@@ -1,0 +1,69 @@
+•Title:
+
+Added Initial Draft for Servo Transition Logic (Hybrid Arm Phase Control)
+
+
+
+
+ •Description:
+
+This update introduces an initial draft of the servo transition logic that will be part of the arm’s hybrid phase control system.
+The aim of this addition is to enable smoother and more adaptive servo positioning during the transition phase between active and passive modes.
+
+
+
+
+• Key Additions:
+
+Added basic servo control logic (Arduino-compatible pseudocode) for smooth transition between angle states.
+
+Included pin definitions, timing configuration, and incremental motion logic for better torque balance.
+
+Designed modular functions to simplify future integration with inverse kinematics or AI-assisted motion planning.
+
+Documented control sequence for testing and simulation.
+
+
+
+
+
+•Sample Pseudocode Snippet:
+
+#include <Servo.h>
+
+Servo transitionServo;
+int servoPin = 9;
+int currentAngle = 0;
+int targetAngle = 90;
+int stepDelay = 15;
+
+void setup() {
+  transitionServo.attach(servoPin);
+}
+
+void loop() {
+  if (currentAngle < targetAngle) {
+    currentAngle++;
+    transitionServo.write(currentAngle);
+    delay(stepDelay);
+  }
+}
+
+
+
+
+•Next steps:
+
+Integrate with IMU feedback loop for adaptive angle correction.
+
+Add PWM smoothing to reduce servo jitter.
+
+Prepare simulation results (MATLAB / Simulink) for testing control stability.
+
+
+
+
+• Notes:
+
+This is an early draft meant for review and iteration.
+Further refinements — including dynamic angle calibration and power optimization — will be added in the next update.
