@@ -1,0 +1,47 @@
+Project HADD — Hybrid Aerodynamic Drone Design
+
+Project HADD (Hybrid Aerodynamic Drone Design) is an experimental initiative aimed at merging fixed-wing efficiency with multi-rotor agility to create a new-generation UAV platform.
+It focuses on VTOL capability, AI-driven obstacle avoidance, and energy optimization using reverse charging and adaptive tilt-propeller control.
+
+Core Objectives
+
+Develop a hybrid VTOL-fixed wing drone for extended endurance and precision maneuvering.
+
+Implement AI-based flight correction and obstacle detection using onboard computer vision.
+
+Design a servo-controlled propeller tilt mechanism for seamless transition between hover and cruise.
+
+Optimize power systems through regenerative charging and intelligent battery management.
+
+Current Progress
+
+Servo-based tilt-propeller prototype tested using Arduino UNO.
+
+Reverse-charging and aerodynamic design under validation.
+
+Structural CAD model designed (SolidWorks + Blender).
+
+Initial AI model for obstacle detection trained on test dataset.
+
+Collaborations initiated with UAV and aerospace startups for hybrid design refinement.
+
+
+ Expected Outcome
+
+A working hybrid UAV prototype demonstrating:
+
+Efficient lift-to-drag performance
+
+AI-assisted autonomous flight
+
+Extended flight time through smart power regeneration
+
+Scalable framework for industrial, agricultural, and surveillance applications
+
+Unique Aspects
+
+Combines aerodynamics + AI + embedded systems.
+
+Built from scratch by a first-year IIIT Una student with early-stage prototypes already tested.
+
+Emphasis on sustainability and efficiency in UAV development.
