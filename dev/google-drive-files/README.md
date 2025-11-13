@@ -26,10 +26,10 @@ $ gem install google-apis-drive_v3
 
 ```console
 $ ./generate-file-ids.rb
-1rf8L-TygYD0FyNEFpG5yzvrz0aRzQWa_	OpenArm_v1.1_leader.STEP
-1KxRKvIAmEH6EU9x1paPJFVpmgKq8uA98	OpenArm_v1.1_follower.STEP
-1Isd2kOAkzInpuACZoU4g6_Pvd6UkvYsS	OpenArm_v1.0_leader.step
-101j23u_6W74ipn4SQLaqvfbzI7kh5W3v	OpenArm_v1.0_follower.step
-1m8ul01bEsziC8pWXq_DLDx7sHWk3GIby	J1_J2.pdf
+1rf8L-TygYD0FyNEFpG5yzvrz0aRzQWa_	STEP (assembly)/OpenArm_v1.1_leader.STEP
+1KxRKvIAmEH6EU9x1paPJFVpmgKq8uA98	STEP (assembly)/OpenArm_v1.1_follower.STEP
+1Isd2kOAkzInpuACZoU4g6_Pvd6UkvYsS	STEP (assembly)/OpenArm_v1.0_leader.step
+101j23u_6W74ipn4SQLaqvfbzI7kh5W3v	STEP (assembly)/OpenArm_v1.0_follower.step
+1m8ul01bEsziC8pWXq_DLDx7sHWk3GIby	Wiring/J1_J2.pdf
 ...
 ```

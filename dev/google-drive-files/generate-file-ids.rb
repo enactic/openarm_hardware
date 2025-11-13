@@ -19,18 +19,25 @@ require "google/apis/drive_v3"
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
 OPENARM_HARDWARE_FOLDER_ID = "1a9ec9vzBV_D-AX9s_LOkBVy3ZXDC1kJT"
 
-def list_files(drive, folder_id, page_token = nil)
+def list_files(drive, folder_id, parent_path: "", page_token: nil)
   response = drive.list_files(
     q: "'#{folder_id}' in parents",
     page_token: page_token
   )
-  list_files(folder_id, response.next_page_token) if response.next_page_token
+  if response.next_page_token
+    list_files(
+      dirve,
+      folder_id,
+      parent_path: parent_path,
+      page_token: response.next_page_token
+    )
+  end
 
   response.files.each do |item|
     if item.mime_type == "application/vnd.google-apps.folder"
-      list_files(drive, item.id)
+      list_files(drive, item.id, parent_path: "#{parent_path}#{item.name}/")
     else
-      puts "#{item.id}\t#{item.name}"
+      puts "#{item.id}\t#{parent_path}#{item.name}"
     end
   end
 end
