@@ -1,0 +1,35 @@
+# Google Drive files
+
+https://drive.google.com/drive/folders/1a9ec9vzBV_D-AX9s_LOkBVy3ZXDC1kJT
+
+## Setup
+
+### gem install
+
+```console
+$ gem install google-apis-drive_v3
+```
+
+### Google service account
+
+1. Create a service account
+   * https://docs.cloud.google.com/iam/docs/service-accounts-create
+2. Create a key and download the JSON file
+   * https://docs.cloud.google.com/iam/docs/keys-create-delete#creating
+3. Set the path of the downloaded JSON file to the environment variable `GOOGLE_APPLICATION_CREDENTIALS`
+   * ```console
+     # Bash example
+     $ export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service_account_json_key.json
+     ```
+
+## Generate file ids
+
+```console
+$ ./generate-file-ids.rb
+1rf8L-TygYD0FyNEFpG5yzvrz0aRzQWa_	OpenArm_v1.1_leader.STEP
+1KxRKvIAmEH6EU9x1paPJFVpmgKq8uA98	OpenArm_v1.1_follower.STEP
+1Isd2kOAkzInpuACZoU4g6_Pvd6UkvYsS	OpenArm_v1.0_leader.step
+101j23u_6W74ipn4SQLaqvfbzI7kh5W3v	OpenArm_v1.0_follower.step
+1m8ul01bEsziC8pWXq_DLDx7sHWk3GIby	J1_J2.pdf
+...
+```
