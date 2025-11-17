@@ -42,11 +42,9 @@ jobs:
         run: |
           name="openarm-hardware-${VERSION}"
           git archive --format=tar ${REF} \
-            --prefix "${name}/" \
-            --output "${name}.tar"
+            --prefix "${name}/" | tar -xf -
 
           while IFS=$'\t' read -r id path; do
-            # todo Exclude files
             mkdir -p "${name}/$(dirname "${path}")"
             curl \
               --silent \
@@ -54,8 +52,7 @@ jobs:
               "https://drive.usercontent.google.com/download?id=${id}"
           done < ./dev/google-drive-files/file-ids.tsv
 
-          find "${name}" -type f | tar -rf "${name}.tar" -T -
-          gzip "${name}.tar"
+          tar -czf ${name}.tar.gz ${name}
 
           sha256sum "${name}.tar.gz" > "${name}.tar.gz.sha256"
           sha512sum "${name}.tar.gz" > "${name}.tar.gz.sha512"
