@@ -33,7 +33,7 @@ Usage: ./generate-file-ids.rb NEXT_VERSION
 Example:
 
 ```console
-$ ./generate-file-ids.rb v1.1
+$ ./generate-file-ids.rb 1.1
 1rf8L-TygYD0FyNEFpG5yzvrz0aRzQWa_	STEP (assembly)/OpenArm_v1.1_leader.STEP
 1KxRKvIAmEH6EU9x1paPJFVpmgKq8uA98	STEP (assembly)/OpenArm_v1.1_follower.STEP
 1m8ul01bEsziC8pWXq_DLDx7sHWk3GIby	Wiring/J1_J2.pdf

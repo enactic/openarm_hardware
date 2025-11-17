@@ -20,8 +20,8 @@ SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
 OPENARM_HARDWARE_FOLDER_ID = "1a9ec9vzBV_D-AX9s_LOkBVy3ZXDC1kJT"
 
 def output?(name, version)
-  return true unless name =~ /_v\d+\.\d+_/
-  name.include?("_#{version}_")
+  return true unless /_v\d+\.\d+_/.match?(name)
+  name.include?("_v#{version}_")
 end
 
 def list_files(drive, folder_id, version, parent_path: "", page_token: nil)
@@ -52,7 +52,7 @@ end
 # https://github.com/googleapis/google-auth-library-ruby?tab=readme-ov-file#example-service-account
 if ARGV.size != 1
   puts "Usage: #{$0} NEXT_VERSION"
-  exit 1
+  exit false
 end
 drive = Google::Apis::DriveV3::DriveService.new
 drive.authorization = Google::Auth::ServiceAccountCredentials.from_env(scope: SCOPES)
