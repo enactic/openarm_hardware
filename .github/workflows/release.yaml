@@ -14,9 +14,8 @@
 
 name: Release
 on:
-  push:
-    tags:
-      - '**'
+  - push
+  - pull_request
 jobs:
   publish:
     name: Publish
@@ -26,19 +25,46 @@ jobs:
       contents: write
       discussions: write
     steps:
+      - name: Set environments
+        run: |
+          if [ "${GITHUB_REF_TYPE}" = "tag" ]; then
+            echo "VERSION=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
+          else
+            echo "VERSION=x.y.z" >> ${GITHUB_ENV}
+          fi
+          if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
+            echo "REF=${GITHUB_SHA}" >> ${GITHUB_ENV}
+          else
+            echo "REF=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
+          fi
       - uses: actions/checkout@v4
       - name: Create source archive
         run: |
-          git archive ${GITHUB_REF_NAME} \
-            --prefix openarm-hardware-${GITHUB_REF_NAME}/ \
-            --output openarm-hardware-${GITHUB_REF_NAME}.tar.gz
-          sha256sum \
-            openarm-hardware-${GITHUB_REF_NAME}.tar.gz > \
-            openarm-hardware-${GITHUB_REF_NAME}.tar.gz.sha256
-          sha512sum \
-            openarm-hardware-${GITHUB_REF_NAME}.tar.gz > \
-            openarm-hardware-${GITHUB_REF_NAME}.tar.gz.sha512
+          name="openarm-hardware-${VERSION}"
+          git archive --format=tar ${REF} \
+            --prefix "${name}/" \
+            --output "${name}.tar"
+
+          while IFS=$'\t' read -r id path; do
+            # todo Exclude files
+            mkdir -p "${name}/$(dirname "${path}")"
+            curl \
+              --silent \
+              --output "${name}/${path}" \
+              "https://drive.usercontent.google.com/download?id=${id}"
+          done < ./dev/google-drive-files/file-ids.tsv
+
+          find "${name}" -type f | tar -rf "${name}.tar" -T -
+          gzip "${name}.tar"
+
+          sha256sum "${name}.tar.gz" > "${name}.tar.gz.sha256"
+          sha512sum "${name}.tar.gz" > "${name}.tar.gz.sha512"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-archive
+          path: openarm-hardware-*.tar.gz*
       - name: Create GitHub Release
+        if: github.ref_type == 'tag'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
