@@ -19,7 +19,12 @@ require "google/apis/drive_v3"
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
 OPENARM_HARDWARE_FOLDER_ID = "1a9ec9vzBV_D-AX9s_LOkBVy3ZXDC1kJT"
 
-def list_files(drive, folder_id, parent_path: "", page_token: nil)
+def output?(name, version)
+  return true unless name =~ /_v\d+\.\d+_/
+  name.include?("_#{version}_")
+end
+
+def list_files(drive, folder_id, version, parent_path: "", page_token: nil)
   response = drive.list_files(
     q: "'#{folder_id}' in parents",
     page_token: page_token
@@ -28,6 +33,7 @@ def list_files(drive, folder_id, parent_path: "", page_token: nil)
     list_files(
       dirve,
       folder_id,
+      version,
       parent_path: parent_path,
       page_token: response.next_page_token
     )
@@ -35,8 +41,8 @@ def list_files(drive, folder_id, parent_path: "", page_token: nil)
 
   response.files.each do |item|
     if item.mime_type == "application/vnd.google-apps.folder"
-      list_files(drive, item.id, parent_path: "#{parent_path}#{item.name}/")
-    else
+      list_files(drive, item.id, version, parent_path: "#{parent_path}#{item.name}/")
+    elsif output?(item.name, version)
       puts "#{item.id}\t#{parent_path}#{item.name}"
     end
   end
@@ -44,6 +50,10 @@ end
 
 # The JSON file for the service account is specified via the environment variable GOOGLE_APPLICATION_CREDENTIALS.
 # https://github.com/googleapis/google-auth-library-ruby?tab=readme-ov-file#example-service-account
+if ARGV.size != 1
+  puts "Usage: #{$0} NEXT_VERSION"
+  exit 1
+end
 drive = Google::Apis::DriveV3::DriveService.new
 drive.authorization = Google::Auth::ServiceAccountCredentials.from_env(scope: SCOPES)
-list_files(drive, OPENARM_HARDWARE_FOLDER_ID)
+list_files(drive, OPENARM_HARDWARE_FOLDER_ID, $ARGV[0])
