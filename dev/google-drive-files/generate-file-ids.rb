@@ -56,4 +56,4 @@ if ARGV.size != 1
 end
 drive = Google::Apis::DriveV3::DriveService.new
 drive.authorization = Google::Auth::ServiceAccountCredentials.from_env(scope: SCOPES)
-list_files(drive, OPENARM_HARDWARE_FOLDER_ID, $ARGV[0])
+list_files(drive, OPENARM_HARDWARE_FOLDER_ID, ARGV[0])
