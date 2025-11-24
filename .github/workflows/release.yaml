@@ -37,7 +37,7 @@ jobs:
           else
             echo "REF=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
           fi
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Create source archive
         run: |
           name="openarm-hardware-${VERSION}"
