@@ -56,7 +56,7 @@ jobs:
 
           sha256sum "${name}.tar.gz" > "${name}.tar.gz.sha256"
           sha512sum "${name}.tar.gz" > "${name}.tar.gz.sha512"
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: source-archive
           path: openarm-hardware-*.tar.gz*
