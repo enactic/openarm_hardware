@@ -3,8 +3,11 @@
 <img width="1082" height="521" alt="Screenshot 2025-10-31 at 12 49 52" src="https://github.com/user-attachments/assets/a344544f-ef29-4bdf-a25b-4c0a9057d5f7" />
 
 ### CAD Files
-All CAD files needed to build, print, and customize the OpenArm hardware platform:   
-**[📁 Google Drive](https://drive.google.com/drive/folders/1a9ec9vzBV_D-AX9s_LOkBVy3ZXDC1kJT?usp=sharing)**
+All CAD files needed to build, print, and customize the OpenArm hardware platform:
+- **v2**: **[📁 Google Drive](https://drive.google.com/drive/folders/14RM-fIPml0HTMnt2zcTXjNxJj9s2R_mG?usp=sharing)**
+- **v1**: **[📁 Google Drive](https://drive.google.com/drive/folders/1a9ec9vzBV_D-AX9s_LOkBVy3ZXDC1kJT?usp=sharing)**
+
+Each drive contains:
 - **STEP** — Full assembly (leader & follower arm)
 - **STL** — Ready-to-print 3D models
 - **Attachments** — Camera mounts, PCB hub casing, etc.

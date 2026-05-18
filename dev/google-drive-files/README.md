@@ -1,6 +1,7 @@
 # Google Drive files
 
-https://drive.google.com/drive/folders/1a9ec9vzBV_D-AX9s_LOkBVy3ZXDC1kJT
+- v2: https://drive.google.com/drive/folders/14RM-fIPml0HTMnt2zcTXjNxJj9s2R_mG
+- v1: https://drive.google.com/drive/folders/1a9ec9vzBV_D-AX9s_LOkBVy3ZXDC1kJT
 
 ## Setup
 
