@@ -17,7 +17,8 @@
 require "google/apis/drive_v3"
 
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
-OPENARM_HARDWARE_FOLDER_ID = "1a9ec9vzBV_D-AX9s_LOkBVy3ZXDC1kJT"
+OPENARM_HARDWARE_FOLDER_ID = "14RM-fIPml0HTMnt2zcTXjNxJj9s2R_mG"
+EXCLUDED_DIRECTORIES = ["Software", "Vendor"]
 
 def output?(name, version)
   return true unless /_v\d+\.\d+_/.match?(name)
@@ -31,7 +32,7 @@ def list_files(drive, folder_id, version, parent_path: "", page_token: nil)
   )
   if response.next_page_token
     list_files(
-      dirve,
+      drive,
       folder_id,
       version,
       parent_path: parent_path,
@@ -41,6 +42,7 @@ def list_files(drive, folder_id, version, parent_path: "", page_token: nil)
 
   response.files.each do |item|
     if item.mime_type == "application/vnd.google-apps.folder"
+      next if EXCLUDED_DIRECTORIES.include?(item.name)
       list_files(drive, item.id, version, parent_path: "#{parent_path}#{item.name}/")
     elsif output?(item.name, version)
       puts "#{item.id}\t#{parent_path}#{item.name}"

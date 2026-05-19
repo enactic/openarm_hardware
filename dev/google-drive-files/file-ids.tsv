@@ -1,43 +1,19 @@
-1rf8L-TygYD0FyNEFpG5yzvrz0aRzQWa_	STEP (assembly)/OpenArm_v1.1_leader.STEP
-1KxRKvIAmEH6EU9x1paPJFVpmgKq8uA98	STEP (assembly)/OpenArm_v1.1_follower.STEP
-1U0VKTMw4hMhBqKJndupev_Do2rU-KYs3	Wiring/Gerber_For_Hub.zip
-1m8ul01bEsziC8pWXq_DLDx7sHWk3GIby	Wiring/J1_J2.pdf
-1bntLNzz9Eq8VZuon_5RzfoUlQQmQBOkj	Wiring/J7_J8.pdf
-1TIwg93wGggNTW4QOfd9BonlnrvNzDGHN	Wiring/power_extension.pdf
-1i46Z3QHrLm_40nL8TIvik1M113sjE7XC	Wiring/CPL_For_Hub.xlsx
-1rZARqoNCM1x-fkAp-AVPbtO4gfdu6bRK	Wiring/J4_J7.pdf
-10tqszaI1wKK1R9X2z8JxXqJBTg01g2cJ	Wiring/communication.pdf
-1_pXvCBLhtGzccUxQhD-rS-xHfYXr4hwO	Wiring/J3_J4.pdf
-1B7UzOuItxCG0vL95UXblADejB90Tnqxf	Wiring/BOM_For_Hub.csv
-1C_PJziKVaqAPDBSc2jwnbjFNqoh9wkTM	STL (3d print)/Follower Gripper/right-jaw.STL
-1G42Okp79Sx1xKiGq_9F0z35R5fJTuymt	STL (3d print)/Follower Gripper/left-jaw.STL
-1Fc5sDOjZ8OSjmjf88j2v0rS8I9CletzI	STL (3d print)/Casing/J6-J7_Cover_L_B.STL
-1jgzJ84-pFg0Hjo5lBY9uLXeT6s7cEZce	STL (3d print)/Casing/J6-J7_Cover_L_A.STL
-1OWFS2xlXekDspvAmo5oNYHLKb4w83bSh	STL (3d print)/Casing/J1-J2_Cover_A.STL
-1iN6UEOYhW5FZdX9T5a3Pz_zvEILxoxu3	STL (3d print)/Casing/J4-J5_Cover_Follower_B.STL
-1f3EmHQI3TUJkOz4F7svcsrpmkVl8KG_e	STL (3d print)/Casing/J6-J7_Cover_R_A.STL
-1yPx8thZp73yBLe8BX5sYl3zFMIIETxG1	STL (3d print)/Casing/J6-J7_Cover_R_B.STL
-1OW2keFf78TQAzcgLxH8GNlSjMyemtDpn	STL (3d print)/Casing/J2-J3_Cover_A.STL
-1bpj-NXjFDyy1-rMycxgpD2ntMxa4Xy8L	STL (3d print)/Casing/J3-J4_Cover_B.STL
-1aQmKvoOX_CIdrEJNRRUaSg7opJ1o_C7y	STL (3d print)/Casing/J1-J2_Cover_B.STL
-11LaTv0b0PR9VTLoTFoZMFL-6YAYmsg5T	STL (3d print)/Casing/Chest_Cover_A.STL
-1L80oyFGyM9PDqqyM5pMWki5FajV2o1cf	STL (3d print)/Casing/Chest_Cover_B.STL
-14vbyMyfCmLuesWB6DsE2MxS9egutTFlU	STL (3d print)/Casing/J2-J3_Cover_B.STL
-10OUOs_jl5icPILMO9u3nrrinKMUUcxCG	STL (3d print)/Casing/J4-J5_Cover_Leader_B.STL
-1iem4jWxsf7qIEmcLYzaC5Sg5J5URBOF0	STL (3d print)/Casing/J3-J4_Cover_A.STL
-1vbfS7azniD0Erj6OoREKD_M_wX5QdMYK	STL (3d print)/Casing/J4-J5_Cover_A.STL
-19ltIE6GRpUSWRkIImFYyxxyPNpmF4bad	STL (3d print)/Leader Gripper/right-pincer.STL
-10EDD5XNu0QdHVIMmumbt6R882Hs82X5v	STL (3d print)/Leader Gripper/rail-connector-leader.STL
-1nlYKTa1Ve5pKBrYOZAONBrU8sY6UyI7T	STL (3d print)/Leader Gripper/left-pincer.STL
-1pnHrikiqHXQAuJV-KQFmUnzFFUein0u5	STL (3d print)/Leader Gripper/swivel-link-leader.STL
-1BpTIdL0EQdFl7Z4v3ffXGvK-CYVKhezS	STL (3d print)/Leader Gripper/swivel-rotor-leader.STL
-1ik3iF4ugfsM9Bg8vanCtt35r7rsmZZuk	Attachments/cables_L-shapedCase.step
-1IM42G6GYYwvD1YF2pXXGpKEgJSYHSHUj	Attachments/cables_L-shapedMold.step
-1feSN3n-9TySjXxZ7YKU_xdXTd53MGIT_	Attachments/pcb-hub_base.stl
-1y5lI8HM87XpVnu0ieSE1wEE5utOJdCCx	Attachments/wrist-camera_D405.stl
-15cKv4ghfg3ROjs_cO4Y_Uj_MizxMrprQ	Attachments/chest-camera_D435.stl
-1iF1S-0hFS_6M179YvXqHO02KQAFuzzlh	Attachments/wrist-camera_base.stl
-1De--HTFpZADbpoFR2-_Bm5tZzkEwIzLx	Attachments/chest-camera_D435.step
-1UrGK4YHD6gXXXyZCPMNSUUxbGTnNuvwu	Attachments/pcb-hub_base.step
-1oVVUoq3vPl0hfez1WDq781YVVK8rTGQ7	Attachments/wrist-camera_D405.step
-1JAFG3-KrB4z2YvameUwCUm-pMmt_LpaM	Attachments/wrist-camera_base.step
+1o3eUXLWWgTuWCb5OTmLyBQvEH0nXxT0w	v2.0/Hardware/OpenArm Cell/Integration with OpenArm/OpenArm_Cell+OpenArm_2.0.STEP
+1Ak9ZRbhdeep9R8xsPZbKWIEbY99sg-Am	v2.0/Hardware/OpenArm Cell/JIG/OpenArmJIG_BOM.xlsx
+1V3CDlTN64f95u9gtATIn5wNTBGyUE3tx	v2.0/Hardware/OpenArm Cell/JIG/OpenArmJIG.STEP
+1dZNUfoNDauqLoxLAgfdjrjm5wZEi3KGA	v2.0/Hardware/OpenArm Cell/Elec/CELL_WIRING.pdf
+1BpHJtbkg-uVoz8ZZrl4nGJyacPUTmq8F	v2.0/Hardware/OpenArm Cell/Elec/CELL_WIRING.xlsx
+1-R55Idf_G9TvjUsMl-cZ8esXmvPLjKyC	v2.0/Hardware/OpenArm Cell/Elec/PWR-CIRCUIT-DIN-RAIL-BUS_2.zip
+1SmF1Q4BQa-QwytB2GYu1YTOXWrtz8T__	v2.0/Hardware/OpenArm Cell/README.docx
+1KojBKJe4hC0Oqus8LIUvfkKwnr3xQx3F	v2.0/Hardware/OpenArm Cell/OpenArm Cell BOM.xlsx
+1CBgghd7gDeWnKbbH2SOlk3yypSj0Dy5a	v2.0/Hardware/OpenArm Cell/OpenEvalCell_defeature.STEP
+1il0ruNigmZ_AfcUPyRAz_hEbmok7gWX4	v2.0/Hardware/OpenArm Cell/OpenEvalCell_defeature.SLDPRT
+1EoUKnqu8Qs1QVaPnXdhNQUHthIQg1fH5	v2.0/Hardware/OpenArm KER/TLE_BOM.xlsx
+1RKXBXrd_-dBsxJVyOu0hJuj0XHoeMdKS	v2.0/Hardware/OpenArm KER/TLE_V3_BOM.csv
+1ZCQiBWh3blXyKXS7pP31KbtrNlMjSwNT	v2.0/Hardware/OpenArm KER/TLE_V3_PCB.pdf
+1AGhYBPp16XlNQGcyJr5s23KVswHtBjN6	v2.0/Hardware/OpenArm KER/TLE_V3_SCH.pdf
+1yFu4qtWyz6Usl2Rlh5nw27mf3TAdeCEj	v2.0/Hardware/OpenArm KER/Gerber_PCB2_5_2026-05-26.zip
+1mP0gDFgGaX6Ufobr8ocyg71ccsYgfBDw	v2.0/Hardware/OpenArm 2.0/Options/OpenArm_2.0_w_Head_Camera.STEP
+15p1PYmEKcDmnYQ5Hy_trM8gIoFCADF5a	v2.0/Hardware/OpenArm 2.0/OpenArm 2.0 BOM.xlsx
+1xHMssSOp9RfZD1K6H80Yyl4uTlpU3lTc	v2.0/Hardware/OpenArm 2.0/README.docx
+1aU-V3lt_aPrZoRM8FFx6dMQu2f28Ws0I	v2.0/Hardware/OpenArm 2.0/OpenArm_2.0.STEP
