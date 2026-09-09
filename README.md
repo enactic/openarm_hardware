@@ -7,11 +7,18 @@ All CAD files needed to build, print, and customize the OpenArm hardware platfor
 - **v2**: **[📁 Google Drive](https://drive.google.com/drive/folders/14RM-fIPml0HTMnt2zcTXjNxJj9s2R_mG?usp=sharing)**
 - **v1**: **[📁 Google Drive](https://drive.google.com/drive/folders/1a9ec9vzBV_D-AX9s_LOkBVy3ZXDC1kJT?usp=sharing)**
 
-Each drive contains:
+The v2 drive contains:
+- **OpenArm 2.0** — Full assembly (STEP), BOM, and options such as the head camera
+- **OpenArm Cell** — Evaluation cell (STEP), BOM, jig, wiring, and integration with OpenArm 2.0
+- **OpenArm KER** — Full assembly (STEP), BOM, jig base, and electronics (PCBs and cables)
+
+The v1 drive contains:
 - **STEP** — Full assembly (leader & follower arm)
 - **STL** — Ready-to-print 3D models
 - **Attachments** — Camera mounts, PCB hub casing, etc.
 - **Wiring** — Diagrams for cable manufacturing
+
+**[GitHub Releases](https://github.com/enactic/openarm_hardware/releases)** provide a `.tar.gz` snapshot of the files for each version. They are only mirrors of Google Drive. Google Drive is the source of truth. If something is missing or broken in a release, please refer to Google Drive.
 
 ### Documentation
 Specifications, bill of materials (BOM), and step-by-step assembly guides:  
