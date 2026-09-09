@@ -46,10 +46,24 @@ jobs:
 
           while IFS=$'\t' read -r id path; do
             mkdir -p "${name}/$(dirname "${path}")"
-            curl \
+            # "confirm=t" skips the "Google Drive can't scan this file
+            # for viruses" confirmation page that is returned instead
+            # of the file itself for large (100MB+) files.
+            content_type=$(curl \
+              --fail \
+              --location \
+              --show-error \
               --silent \
               --output "${name}/${path}" \
-              "https://drive.usercontent.google.com/download?id=${id}"
+              --write-out '%{content_type}' \
+              "https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t")
+            case "${content_type}" in
+              text/html*)
+                echo "::error::Failed to download ${path} (${id}): Google Drive returned an HTML page instead of the file"
+                exit 1
+                ;;
+            esac
+            echo "Downloaded ${path} ($(stat -c %s "${name}/${path}") bytes)"
           done < ./dev/google-drive-files/file-ids.tsv
 
           tar -czf ${name}.tar.gz ${name}
