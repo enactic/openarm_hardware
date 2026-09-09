@@ -44,6 +44,13 @@ def list_files(drive, folder_id, version, parent_path: "", page_token: nil)
     if item.mime_type == "application/vnd.google-apps.folder"
       next if EXCLUDED_DIRECTORIES.include?(item.name)
       list_files(drive, item.id, version, parent_path: "#{parent_path}#{item.name}/")
+    elsif item.mime_type == "application/vnd.google-apps.document"
+      # Google Docs can't be downloaded as is. The release job
+      # exports it as PDF. The MIME type in the third column tells
+      # the release job to do so.
+      puts "#{item.id}\t#{parent_path}#{item.name}.pdf\t#{item.mime_type}"
+    elsif item.mime_type.start_with?("application/vnd.google-apps.")
+      $stderr.puts "Skipped unsupported Google Workspace file: #{parent_path}#{item.name} (#{item.mime_type})"
     elsif output?(item.name, version)
       puts "#{item.id}\t#{parent_path}#{item.name}"
     end

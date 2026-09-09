@@ -44,11 +44,24 @@ jobs:
           git archive --format=tar ${REF} \
             --prefix "${name}/" | tar -xf -
 
-          while IFS=$'\t' read -r id path; do
+          while IFS=$'\t' read -r id path mime_type; do
+            case "${mime_type}" in
+              "")
+                # "confirm=t" skips the "Google Drive can't scan this
+                # file for viruses" confirmation page that is returned
+                # instead of the file itself for large (100MB+) files.
+                url="https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t"
+                ;;
+              application/vnd.google-apps.document)
+                # Google Docs is exported as PDF.
+                url="https://docs.google.com/document/d/${id}/export?format=pdf"
+                ;;
+              *)
+                echo "::error::Unsupported Google Workspace file: ${path} (${mime_type})"
+                exit 1
+                ;;
+            esac
             mkdir -p "${name}/$(dirname "${path}")"
-            # "confirm=t" skips the "Google Drive can't scan this file
-            # for viruses" confirmation page that is returned instead
-            # of the file itself for large (100MB+) files.
             content_type=$(curl \
               --fail \
               --location \
@@ -56,7 +69,7 @@ jobs:
               --silent \
               --output "${name}/${path}" \
               --write-out '%{content_type}' \
-              "https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t")
+              "${url}")
             case "${content_type}" in
               text/html*)
                 echo "::error::Failed to download ${path} (${id}): Google Drive returned an HTML page instead of the file"
