@@ -34,12 +34,16 @@ Usage: ./generate-file-ids.rb NEXT_VERSION
 Example:
 
 ```console
-$ ./generate-file-ids.rb 1.1
-1rf8L-TygYD0FyNEFpG5yzvrz0aRzQWa_	STEP (assembly)/OpenArm_v1.1_leader.STEP
-1KxRKvIAmEH6EU9x1paPJFVpmgKq8uA98	STEP (assembly)/OpenArm_v1.1_follower.STEP
-1m8ul01bEsziC8pWXq_DLDx7sHWk3GIby	Wiring/J1_J2.pdf
-...
+$ ./generate-file-ids.rb 2.0 > file-ids.tsv
+$ head -n 3 file-ids.tsv
+1mP0gDFgGaX6Ufobr8ocyg71ccsYgfBDw	OpenArm 2.0/Options/OpenArm_2.0_w_Head_Camera.STEP
+15p1PYmEKcDmnYQ5Hy_trM8gIoFCADF5a	OpenArm 2.0/OpenArm 2.0 BOM.xlsx
+1aU-V3lt_aPrZoRM8FFx6dMQu2f28Ws0I	OpenArm 2.0/OpenArm_2.0.STEP
 ```
+
+Only files in the `Hardware/` directory of the specified version
+such as `v2.0/Hardware/` are included. `v2.0/` and `Hardware/` are
+omitted from the path.
 
 ## `file-ids.tsv`
 
